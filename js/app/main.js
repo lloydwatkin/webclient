@@ -15,14 +15,16 @@
  */
 
 requirejs.config({
-  baseUrl: '/js/vendor',
   paths: {
     'config': '../../config',
     'templates': '../../templates',
-    'models': '../app/models',
-    'Router': '../app/Router',
-    'util': '../app/util',
-    'views': '../app/views'
+    'l10n': '../vendor/l10n',
+    'l10n-browser': '../vendor/l10n-browser',
+    'backbone': '../vendor/backbone',
+    'underscore': '../vendor/underscore',
+    'jquery': '../vendor/jquery',
+    'text': '../vendor/text',
+
   },
 
   shim: {
