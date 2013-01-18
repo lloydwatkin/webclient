@@ -1418,9 +1418,15 @@
     // Make the request, allowing the user to override any Ajax options.
     return Backbone.ajax(_.extend(params, options));
   };
-
+var credentials;
   // Set the default implementation of `Backbone.ajax` to proxy through to `$`.
   Backbone.ajax = function() {
+    if (arguments[0].credentials) {
+        credentials = arguments[0].credentials;
+    } else if (credentials) {
+        arguments[0].credentials = credentials;
+        arguments[0].xhrFields = {withCredentials: true}
+    }
     return Backbone.$.ajax.apply(Backbone.$, arguments);
   };
 
