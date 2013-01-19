@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs = require('fs-extra');
 var rjs = require('requirejs');
 var wrench = require('wrench');
