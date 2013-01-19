@@ -1,0 +1,39 @@
+<div class="discoverChannels clearfix">
+  <div class="local span-2">
+    <div class="span-1">
+      <h2 data-l10n="channels">Channels</h2>
+      <% if (channels) { %>
+      <div class="list">
+        <% _.each(channels, function(channel) { %>
+        <div class="channel justify" id="<%= channel.jid() %>">
+          <img class="avatar" data-type="<%= channel.channelType() %>" src="<%= channel.jidAvatarUrl(50) %>"></img>
+          <div class="info flex">
+            <span class="owner"><%- channel.title() %></span>
+            <span class="about"><%- channel.description() %></span>
+          </div>
+          <div class="follow button callToAction" data-l10n="followButton">Follow</div>
+        </div>
+        <% }); %>
+      </div>
+      <% } %>
+    </div>
+    <div class="span-1">
+      <h2 data-l10n="posts">Posts</h2>
+      <% if (posts) { %>
+      <div class="list posts">
+        <% _.each(posts, function(post) { %>
+        <article class="post">
+          <section class="opener">
+            <img class="avatar" data-type="personal" src="<%= post.authorAvatarUrl(50) %>"></img>
+              <div class="postmeta">
+                <time class="ago" data-strftime="%d.%m.%Y %H:%M" data-strftitle="%A %d %B %Y %H:%M" datetime="<%= post.published() %>" title="<%= post.published() %>">3 days</time>
+              </div>
+            <p><%- post.content() %></p>
+          </section>
+        </article>
+        <% }); %>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</div>

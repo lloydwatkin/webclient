@@ -1,0 +1,94 @@
+<div class="discoverChannels clearfix">
+  <div class="local span-2">
+    <h1 data-l10n="discoveryLocal">Local</h1>
+    <div class="mostActive span-1">
+      <h2 data-l10n="discoveryActive">Most active</h2>
+      <% if (mostActive) { %>
+      <div class="list">
+        <% _.each(mostActive, function(channel) { %>
+        <div class="channel justify" id="<%= channel.jid() %>">
+          <img class="avatar" data-type="<%= channel.channelType() %>" src="<%= channel.jidAvatarUrl(50) %>"></img>
+          <div class="info flex">
+            <span class="owner"><%- channel.title() %></span>
+            <span class="about"><%- channel.description() %></span>
+          </div>
+          <div class="follow button callToAction" data-l10n="followButton">Follow</div>
+        </div>
+        <% }); %>
+      </div>
+      <% } %>
+    </div>
+    <div class="popular span-1">
+      <h2 data-l10n="discoveryRecommended">Recommended</h2>
+      <% if (recommended) { %>
+      <div class="list">
+        <% _.each(recommended, function(channel) { %>
+        <div class="channel justify" id="<%= channel.jid() %>">
+          <img class="avatar" data-type="<%= channel.channelType() %>" src="<%= channel.jidAvatarUrl(50) %>"></img>
+          <div class="info flex">
+            <span class="owner"><%- channel.title() %></span>
+            <span class="about"><%- channel.description() %></span>
+          </div>
+          <div class="follow button callToAction" data-l10n="followButton">Follow</div>
+        </div>
+        <% }); %>
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <div class="global span-2">
+    <h1 data-l10n="discoveryGlobal">Global</h1>
+    <div class="mostActive span-1">
+      <h2 data-l10n="discoveryActive">Most active</h2>
+      <% if (mostActive) { %>
+      <div class="list">
+        <% _.each(mostActive, function(channel) { %>
+        <div class="channel justify" id="<%= channel.jid() %>">
+          <img class="avatar" data-type="<%= channel.channelType() %>" src="<%= channel.jidAvatarUrl(50) %>"></img>
+          <div class="info flex">
+            <span class="owner"><%- channel.title() %></span>
+            <span class="about"><%- channel.description() %></span>
+          </div>
+          <div class="follow button callToAction" data-l10n="followButton">Follow</div>
+        </div>
+        <% }); %>
+      </div>
+      <% } %>
+    </div>
+    <div class="popular span-1">
+      <h2 data-l10n="discoveryRecommended">Recommended</h2>
+      <% if (recommended) { %>
+      <div class="list">
+        <% _.each(recommended, function(channel) { %>
+        <div class="channel justify" id="<%= channel.jid() %>">
+          <img class="avatar" data-type="<%= channel.channelType() %>" src="<%= channel.jidAvatarUrl(50) %>"></img>
+          <div class="info flex">
+            <span class="owner"><%- channel.title() %></span>
+            <span class="about"><%- channel.description() %></span>
+          </div>
+          <div class="follow button callToAction" data-l10n="followButton">Follow</div>
+        </div>
+        <% }); %>
+      </div>
+      <% } %>
+    </div>
+  </div>
+<!-- TODO not supported yet
+<div class="location span-1">
+
+<h1>Location</h1>
+<div class="nearby span-1">
+<h2>Nearby</h2>
+<div class="list">
+<div class="channel justify">
+<div class="avatar" style="background-image: url(prototypes/avatars/user12.jpg)"></div>
+<div class="info flex">
+<span class="owner">Franz</span>
+<span class="about">Hanging out at starbucks</span>
+</div>
+<div class="follow button">Follow</div>
+</div>
+</div>
+</div>
+</div> -->
+</div>
