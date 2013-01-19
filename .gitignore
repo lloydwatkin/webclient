@@ -1,5 +1,7 @@
 .c9revisions
 /new buddycloud.tmproj
+build/node_modules
+build/output
 *.swp
 locales/wti-config.wti
 
